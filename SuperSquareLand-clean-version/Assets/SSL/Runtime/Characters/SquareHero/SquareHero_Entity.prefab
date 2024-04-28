@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 182482925853841835}
   - component: {fileID: 7212136366118121974}
   - component: {fileID: 6480041685457909243}
+  - component: {fileID: 4352807341513280571}
   m_Layer: 0
   m_Name: SquareHero_Entity
   m_TagString: Untagged
@@ -830,7 +831,7 @@ Rigidbody2D:
     m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &6480041685457909243
 MonoBehaviour:
@@ -845,6 +846,51 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 7212136366118121974}
-  _horizontalSpeed: 5
+  _groundHorizontalMouvementSettings:
+    acceleration: 20
+    deceleration: 15
+    turnBackFrictions: 25
+    speedMax: 5
+  _airHorizontalMouvementSettings:
+    acceleration: 20
+    deceleration: 15
+    turnBackFrictions: 25
+    speedMax: 5
+  _mouvementsettings:
+    acceleration: 20
+    deceleration: 15
+    turnBackFrictions: 25
+    speedMax: 5
   _orientVisualRoot: {fileID: 3024582456938629764}
+  _fallSettings:
+    fallGravity: 20
+    fallSpeedMax: 10
+  _groundDetector: {fileID: 0}
   _guiDebug: 0
+  _jumpSettings:
+    jumpSpeed: 10
+    jumpMinDuration: 0.05
+    jumpMaxDuration: 0.15
+  _jumpFallSettings:
+    fallGravity: 60
+    fallSpeedMax: 20
+--- !u!114 &4352807341513280571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6771865885331362632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7cacf70887e36ed45a48b9ba30afc1d0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _detectionPoints:
+  - {fileID: 203643196923139263}
+  - {fileID: 5060177279040936632}
+  - {fileID: 6662331843491865519}
+  _detectionLength: 0.05
+  _groundLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
